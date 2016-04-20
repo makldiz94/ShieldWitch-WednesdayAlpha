@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
+		chasing = false;
         target = GameObject.Find("Player_Test");
 		AudioSource[] allAudioSources = GetComponents<AudioSource>();
 		attackSource = allAudioSources [0];
