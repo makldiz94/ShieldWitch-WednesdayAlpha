@@ -40,6 +40,8 @@ public class Bullet : MonoBehaviour {
     }
 
     void Update () {
+		//destroy bullet after 6 seconds
+		Destroy(gameObject, 5f);
         if(proMove == true)
         {
             StartCoroutine(Movement());
@@ -57,6 +59,7 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
+		Destroy (gameObject);
 		if (col.gameObject.tag == "Player") {
 			Debug.Log ("Bullet hit player");
 			Destroy (gameObject);
@@ -198,4 +201,6 @@ public class Bullet : MonoBehaviour {
 
         yield return 0;
     }
+
+
 }

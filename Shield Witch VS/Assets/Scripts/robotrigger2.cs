@@ -18,17 +18,27 @@ public class robotrigger2 : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D hit){
 
-		if (hit.CompareTag("Player"))
-		{
+		if (hit.CompareTag ("Player")) {
 
 			script1 = enemies [0].GetComponent<Enemy> ();
 			//script2 = enemies [1].GetComponent<Enemy> ();
 			script1.enabled = true;
+			script1.chasing = true;
 			//script2.enabled = true;
 			triggerSource.clip = triggersound;
 			triggerSource.Play ();
 
+			StartCoroutine (ShutDown ());
+
 		}
+	}
+
+	IEnumerator ShutDown()
+	{
+		yield return new WaitForSeconds (8f);
+		script1.chasing = false;
+		//script1.enabled = false;
+
 	}
 }
 

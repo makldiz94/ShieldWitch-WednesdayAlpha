@@ -24,11 +24,24 @@ public class RoboTrigger : MonoBehaviour {
 			script1 = enemies [0].GetComponent<Enemy> ();
 			script2 = enemies [1].GetComponent<Enemy> ();
 			script1.enabled = true;
+			script1.chasing = true;
 			script2.enabled = true;
+			script2.chasing = true;
+			StartCoroutine (ShutDown ());
 			triggerSource.clip = triggersound;
 			triggerSource.Play ();
 
+
 		}
+	}
+
+	IEnumerator ShutDown()
+	{
+		yield return new WaitForSeconds (8f);
+		script1.chasing = false;
+		script2.chasing = false;
+		//script1.enabled = false;
+
 	}
 }
        

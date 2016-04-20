@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour {
 
     private Vector3 euler;
     private Vector3 look;
-    public int health = 1;
+
     public float speed = 1;
     public GameObject target;
     public GameObject scorePrefab;
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour {
 		attackSource = allAudioSources [0];
 		stunSource = allAudioSources [1];
 		deathSource = allAudioSources [2];
-		GetComponent<Enemy> ().enabled = false;
+		//GetComponent<Enemy> ().enabled = false;
         //chasing = false;
 	}
 
