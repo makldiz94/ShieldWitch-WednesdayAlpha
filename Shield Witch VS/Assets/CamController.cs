@@ -21,6 +21,7 @@ public class CamController : MonoBehaviour {
 		if (hitGround) {
 			smoothcam.enabled = true;
 			strictcam.enabled = false;
+			player.GetComponent<Rigidbody2D> ().gravityScale = 3;
 		}
 
 		if (hitMoving) {
